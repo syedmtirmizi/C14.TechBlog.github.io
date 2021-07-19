@@ -8,7 +8,9 @@ const sequelize = "mysql://vjuk7s1mhxsbddyr:kgufseqltpxgpv7m@s465z7sj4pwhp7fn.cb
   : new Sequelize("techblog_db", "root", "Pakistan0412!", {
     host: 'localhost',
     dialect: 'mysql',
-    port: 3306
+    dialectOptions: {
+      decimalNumbers: true,
+    },
   });
 
 module.exports = sequelize;
