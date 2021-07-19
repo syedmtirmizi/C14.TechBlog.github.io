@@ -1,10 +1,11 @@
 const Sequelize = require('sequelize');
+const path = require("path");
 
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'})
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize(process.env.DB_NAME, process.env.USERNAME, process.env.PASSWORD, {
+  : new Sequelize("techblog_db", "root", "Pakistan0412!", {
     host: 'localhost',
     dialect: 'mysql',
     port: 3306
